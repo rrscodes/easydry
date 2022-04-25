@@ -23,5 +23,7 @@
 	}
 	.row {
 		background-color: var(--tertiary-color);
+		padding-left: 10vw;
+		padding-right: 10vw;
 	}
 </style>

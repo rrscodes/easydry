@@ -1,6 +1,11 @@
 <script>
 	import heroImg from '$lib/assets/img/home-page-bg.png';
+	import ServiceCard from '../components/home/ServicesCard.svelte';
 </script>
+
+<svelte:head>
+	<title>EasyDry</title>
+</svelte:head>
 
 <div class="main-hero">
 	<div class="hero-content">
@@ -11,8 +16,12 @@
 		</p>
 		<a href="/about">Signup for Free Pickup & Delivery</a>
 	</div>
-	<img src={heroImg} alt="EasyDry" class="hero-img" />
+	<div class="hero-img">
+		<img src={heroImg} alt="EasyDry" />
+	</div>
 </div>
+
+<ServiceCard />
 
 <style>
 	.main-hero {
@@ -23,17 +32,18 @@
 		background-color: var(--tertiary-color);
 		height: 60vh;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		flex: 1;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-left: 10vw;
+		padding-right: 20vw;
+		position: relative;
 	}
 
 	.hero-content {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		width: 50%;
-		max-width: 500px;
-		margin-top: -20vh;
+		padding-right: 10vw;
 	}
 
 	.hero-content h1 {
@@ -53,10 +63,15 @@
 	.hero-content a {
 		color: #fff;
 		background-color: var(--accent-color);
-		padding: 1rem 2rem;
+		padding: 1.5rem 2rem;
 		border-radius: 8px;
 		font-size: 1rem;
 		font-weight: 400;
 		margin-top: 1rem;
+	}
+
+	.hero-img {
+		max-height: 40vh;
+		display: flex;
 	}
 </style>
